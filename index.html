@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commit to Greatness 🚀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="sparks"></canvas>
+
+    <div class="container" id="main-container">
+        
+        <div id="journey-screen">
+            <h1 id="question">🏆 Are you winning, son?</h1>
+            <p class="quote" id="quote">"Victory is reserved for those willing to pay its price."</p>
+            
+            <div class="gif-container">
+                <img id="main-gif" src="https://media.giphy.com/media/11F0d1IkSKiOwe/giphy.gif" alt="Motivational GIF">
+            </div>
+
+            <div class="buttons">
+                <button class="btn-yes" id="btn-yes" onclick="handleYes()">YESSS 🔥</button>
+                <button class="btn-no" id="btn-no">NO 😭</button>
+            </div>
+        </div>
+
+        <div id="success-screen">
+            <div class="offer-card">
+                <h2>OFFER LETTER 🚀</h2>
+                <p>Dear <strong>Future Champion</strong>,</p>
+                <p>Congratulations. You have officially accepted the offer to become the strongest version of yourself.</p>
+                <br>
+                <p><strong>Position:</strong> Future Successful You</p>
+                <p><strong>Joining Date:</strong> Today</p>
+                <p><strong>Salary:</strong> Unlimited Respect, Confidence, and Achievement</p>
+                <br>
+                <p><strong>Requirements:</strong></p>
+                <p>✔️ Discipline<br>✔️ Consistency<br>✔️ Hard Work<br>✔️ Patience</p>
+                <br>
+                <p>Welcome aboard.</p>
+                <p class="highlight">- Your Future Self</p>
+            </div>
+            <button class="btn-reset" onclick="resetJourney()">Restart Journey 🔄</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

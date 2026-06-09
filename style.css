@@ -1,0 +1,216 @@
+:root {
+    --bg-color: #080808;
+    --neon-green: #00ff66;
+    --neon-red: #ff0055;
+    --neon-blue: #00f3ff;
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Particle Canvas */
+#sparks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.container {
+    text-align: center;
+    z-index: 20;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    transition: opacity 0.4s ease;
+}
+
+/* Main Journey Screen */
+#journey-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    min-height: 50px;
+}
+
+.gif-container {
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    background: #111;
+}
+
+.gif-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Buttons Container */
+.buttons {
+    display: flex;
+    gap: 40px; /* Big gap to prevent overlap */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 120px;
+    position: relative;
+    width: 100%;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Big Initial Size for YES */
+.btn-yes {
+    background: transparent;
+    border: 2px solid var(--neon-green);
+    color: var(--neon-green);
+    font-size: 24px;
+    padding: 15px 40px;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.5), inset 0 0 10px rgba(0, 255, 102, 0.3);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.btn-yes:hover {
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 30px var(--neon-green);
+}
+
+/* Big Initial Size for NO */
+.btn-no {
+    background: transparent;
+    border: 2px solid var(--neon-red);
+    color: var(--neon-red);
+    font-size: 24px;
+    padding: 15px 40px;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+    text-shadow: 0 0 5px var(--neon-red);
+}
+
+.btn-no:hover {
+    background: var(--neon-red);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-red);
+}
+
+/* Success Screen / Offer Letter */
+#success-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.offer-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--neon-blue);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 0 40px rgba(0, 243, 255, 0.15);
+    max-width: 500px;
+    width: 100%;
+}
+
+.offer-card h2 {
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.offer-card p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.highlight {
+    color: var(--neon-green);
+    font-weight: 600;
+}
+
+.btn-reset {
+    margin-top: 30px;
+    background: transparent;
+    border: 1px solid var(--text-dim);
+    color: var(--text-dim);
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
+.btn-reset:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    .buttons { gap: 20px; }
+    .btn-yes { font-size: 20px; padding: 12px 30px; }
+    .btn-no { font-size: 20px; padding: 12px 30px; }
+    .offer-card { padding: 20px; }
+}
