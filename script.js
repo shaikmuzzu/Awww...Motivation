@@ -1,15 +1,65 @@
-// 10 Highly Motivating GIFs
+// 10 Highly Motivating GIFs (with built-in high-reliability fallback images)
 const steps = [
-    { q: "🏆 Are you winning, son?", quote: `"Victory is reserved for those who are willing to pay its price."`, gif: "https://media.giphy.com/media/11F0d1IkSKiOwe/giphy.gif" }, // Rocky
-    { q: "Are you willing to win and work hard, son? 💪", quote: `"Hard work beats talent when talent doesn't work hard."`, gif: "https://media.giphy.com/media/87xihBthJ1DkA/giphy.gif" }, // Let's go
-    { q: "Will you sacrifice comfort for greatness? 😤", quote: `"Greatness is on the other side of your comfort zone."`, gif: "https://media.giphy.com/media/84Xo4FrFLweYM/giphy.gif" }, // Goku Training
-    { q: "Will future you be proud of today's actions? 🕰️", quote: `"Don't trade what you want most for what you want right now."`, gif: "https://media.giphy.com/media/xT1XGT9ersCCKjcIGs/giphy.gif" }, // Kobe Bryant
-    { q: "Are you ready to eliminate distractions? 📵", quote: `"Starve your distractions, feed your focus."`, gif: "https://media.giphy.com/media/Jp4dchTKX6BzGkZ5Cz/giphy.gif" }, // Naruto typing/working
-    { q: "Will you push past being 'just average'? 📈", quote: `"Average is a failing formula."`, gif: "https://media.giphy.com/media/3o7TKr3nzbh5WgCFxe/giphy.gif" }, // Lifting
-    { q: "Do you have the discipline to stay consistent? 🧱", quote: `"Consistency is what transforms average into excellence."`, gif: "https://media.giphy.com/media/3oKIPcfX631trLEyCQ/giphy.gif" }, // Hype/Grind
-    { q: "Will you keep going when it gets hard? ⛈️", quote: `"If you're going through hell, keep going."`, gif: "https://media.giphy.com/media/2bUpP71bbVnZ3x7lgQ/giphy.gif" }, // Running hard
-    { q: "Are you ready to unlock your true potential? 🔓", quote: `"Your only limit is your mind."`, gif: "https://media.giphy.com/media/3oEduQ3OiH7kZQj3a0/giphy.gif" }, // Muhammad Ali
-    { q: "Last chance. Are you choosing greatness? 👑", quote: `"It's now or never."`, gif: "https://media.giphy.com/media/3o7TKWe6iA09rK0vC0/giphy.gif" } // Clock grinding/Time
+    { 
+        q: "🏆 Are you winning, son?", 
+        quote: `"Victory is reserved for those who are willing to pay its price."`, 
+        gif: "https://i.imgur.com/75N7pda.gif", // Rocky Training
+        fallback: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80" 
+    }, 
+    { 
+        q: "Are you willing to win and work hard, son? 💪", 
+        quote: `"Hard work beats talent when talent doesn't work hard."`, 
+        gif: "https://i.imgur.com/bH84nZC.gif", // Gym Motivation
+        fallback: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500&q=80" 
+    }, 
+    { 
+        q: "Will you sacrifice comfort for greatness? 😤", 
+        quote: `"Greatness is on the other side of your comfort zone."`, 
+        gif: "https://i.imgur.com/K6Yw780.gif", // Anime Training / Goku
+        fallback: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80" 
+    }, 
+    { 
+        q: "Will future you be proud of today's actions? 🕰️", 
+        quote: `"Don't trade what you want most for what you want right now."`, 
+        gif: "https://i.imgur.com/AxwN0g9.gif", // Kobe Bryant Mamba Mentality
+        fallback: "https://images.unsplash.com/photo-1508962914676-134849a727f0?w=500&q=80" 
+    }, 
+    { 
+        q: "Are you ready to eliminate distractions? 📵", 
+        quote: `"Starve your distractions, feed your focus."`, 
+        gif: "https://i.imgur.com/39wH8bL.gif", // Late night study/work
+        fallback: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&q=80" 
+    }, 
+    { 
+        q: "Will you push past being 'just average'? 📈", 
+        quote: `"Average is a failing formula."`, 
+        gif: "https://i.imgur.com/XqN8m72.gif", // Heavy lifting Focus
+        fallback: "https://images.unsplash.com/photo-1517838495310-cae650085d77?w=500&q=80" 
+    }, 
+    { 
+        q: "Do you have the discipline to stay consistent? 🧱", 
+        quote: `"Consistency is what transforms average into excellence."`, 
+        gif: "https://i.imgur.com/6S6M9Z4.gif", // Running/Grinding
+        fallback: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=500&q=80" 
+    }, 
+    { 
+        q: "Will you keep going when it gets hard? ⛈️", 
+        quote: `"If you're going through hell, keep going."`, 
+        gif: "https://i.imgur.com/v8tT9K0.gif", // Boxing Focus
+        fallback: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=500&q=80" 
+    }, 
+    { 
+        q: "Are you ready to unlock your true potential? 🔓", 
+        quote: `"Your only limit is your mind."`, 
+        gif: "https://i.imgur.com/AhX7M1w.gif", // Muhammad Ali
+        fallback: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=500&q=80" 
+    }, 
+    { 
+        q: "Last chance. Are you choosing greatness? 👑", 
+        quote: `"It's now or never."`, 
+        gif: "https://i.imgur.com/YwN9zP2.gif", // Success/Clock ticking
+        fallback: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&q=80" 
+    }
 ];
 
 // State Variables
@@ -43,9 +93,17 @@ function renderStep() {
     setTimeout(() => {
         questionEl.innerText = data.q;
         quoteEl.innerText = data.quote;
+        
+        // Load the primary GIF
         gifEl.src = data.gif;
 
-        // Dynamic Sizing Logic (No CSS scale to avoid overlap)
+        // AUTOMATIC FALLBACK SYSTEM: If the GIF blocks or fails, load the bulletproof backup image
+        gifEl.onerror = function() {
+            this.src = data.fallback;
+            this.onerror = null; // Prevent infinite loops if fallback fails too
+        };
+
+        // Dynamic Sizing Logic (No layout overlapping)
         const baseYesSize = 24;
         const baseYesPadV = 15;
         const baseYesPadH = 40;
@@ -54,11 +112,11 @@ function renderStep() {
         const baseNoPadV = 15;
         const baseNoPadH = 40;
 
-        // YES gets bigger
+        // YES gets bigger gradually
         btnYes.style.fontSize = `${baseYesSize + (currentStep * 4)}px`;
         btnYes.style.padding = `${baseYesPadV + (currentStep * 2)}px ${baseYesPadH + (currentStep * 5)}px`;
 
-        // NO shrinks slowly (stays clickable longer)
+        // NO shrinks slowly (stays perfectly clickable and clear until the last page)
         const newNoSize = Math.max(12, baseNoSize - (currentStep * 1.5));
         const newNoPadV = Math.max(8, baseNoPadV - (currentStep * 1));
         const newNoPadH = Math.max(15, baseNoPadH - (currentStep * 3));
